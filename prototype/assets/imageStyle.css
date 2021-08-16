@@ -1,0 +1,14 @@
+.imageUI{
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.imageUI:hover{
+    width: 100%;
+    border: 1px solid black;
+}
+
+.imageUIselected{
+    width: 100%;
+    border: 2px solid black;
+}
