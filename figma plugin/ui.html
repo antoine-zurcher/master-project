@@ -1,0 +1,34 @@
+<h2>Select the UI layout</h2>
+<button style="display:block;width:120px; height:30px;" onclick="document.getElementById('get_the_file').click()">Choose file</button>
+<input type='file' id="get_the_file" style="display:none">
+<button style="display:block;width:120px; height:30px;" id="loading">Set loading page</button>
+<button style="display:block;width:120px; height:30px;" id="clear">Clear layout</button>
+<button style="display:block;width:120px; height:30px;" id="sync">Sync</button>
+<script>
+
+document.getElementById("get_the_file").addEventListener("change", function() {
+  var file_to_read = document.getElementById("get_the_file").files[0];
+  var fileread = new FileReader();
+  fileread.onload = function(e) {
+    var content = e.target.result;
+    // console.log(content);
+    var json_data = JSON.parse(content); // Array of Objects.
+    parent.postMessage({ pluginMessage: { type: 'send-data', json_data } }, '*')
+  };
+  fileread.readAsText(file_to_read);
+});
+
+document.getElementById('clear').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'clear' } }, '*')
+}
+
+document.getElementById('loading').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'loading' } }, '*')
+}
+
+document.getElementById('sync').onclick = () => {
+  parent.postMessage({ pluginMessage: { type: 'sync' } }, '*')
+}
+
+
+</script>

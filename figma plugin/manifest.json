@@ -1,0 +1,7 @@
+{
+  "name": "UIEditor",
+  "id": "963733624180763630",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "ui.html"
+}

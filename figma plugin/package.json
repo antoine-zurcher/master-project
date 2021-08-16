@@ -1,0 +1,19 @@
+{
+  "name": "UIEditor",
+  "version": "1.0.0",
+  "description": "Your Figma plugin",
+  "main": "code.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json"
+  },
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.19.3",
+    "@types/node": "^14.14.37",
+    "babel-preset-stage-3": "^6.24.1"
+  },
+  "dependencies": {
+    "danfojs-node": "^0.2.6"
+  }
+}
